@@ -1,16 +1,31 @@
 from django.shortcuts import render
+from .models import *
+from category.models import *
 
 # Create your views here.
 
 
 def HomePage(request):
+    products = Product.objects.all().filter(is_available=True)
+    categories = Category.objects.all()
 
-    return render(request,'./Store/home.html')
+    context ={
+        'products':products
+    }
+
+    return render(request,'./Store/home.html',context)
 
 
 def Products(request):
+    products = Product.objects.all().filter(is_available=True)
+    categories = Category.objects.all()
 
-    return render(request,'./Store/Products.html')
+    context ={
+        'products':products,
+        'categories':categories
+    }
+
+    return render(request,'./Store/Products.html',context)
 
 
 def ShoppingCart(request):
@@ -30,3 +45,8 @@ def About(request):
 def ProductDetails(request):
 
     return render(request,'./Store/ProductDetails.html')
+
+
+def PlaceOrder(request):
+
+    return render(request,'./Store/PlaceOrder.html')
