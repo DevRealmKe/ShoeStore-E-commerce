@@ -27,6 +27,20 @@ def Products(request):
 
     return render(request,'./Store/Products.html',context)
 
+def ProductDetails(request,category_slug,product_slug):
+    all_products = Product.objects.all()
+    try:
+        single_product =Product.objects.get(category__slug=category_slug,slug=product_slug)
+    except Exception as e:
+        raise e
+
+    context = {
+        'single_product':single_product,
+        'all_products':all_products
+    }
+
+    return render(request,'./Store/ProductDetails.html',context)
+
 
 def ShoppingCart(request):
 
@@ -42,9 +56,7 @@ def About(request):
     return render(request,'./Store/About.html')
 
 
-def ProductDetails(request):
 
-    return render(request,'./Store/ProductDetails.html')
 
 
 def PlaceOrder(request):

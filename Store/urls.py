@@ -7,7 +7,7 @@ urlpatterns = [
     path('cart',ShoppingCart,name='shopping_cart'),
     path('contact',Contact,name='Contact'),
     path('about',About,name='About'),
-    path('product',ProductDetails,name='Product'),
+    path('<slug:category_slug>/<slug:product_slug>',ProductDetails,name='Product'),
     path('place_order',PlaceOrder,name='Place_order'),
 
 ]

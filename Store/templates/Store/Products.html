@@ -5,7 +5,7 @@
 
 <!-- Product -->
 	<!-- Product -->
-	<div class="bg0 m-t-30 p-b-140" >
+	<div class="bg0 m-t-30 p-b-140" style="background-color:#dee5d1 !important;">
 		<div class="container" style="margin-top: 130px !important;">
 			<div class="flex-w flex-sb-m p-b-52">
 				<div class="flex-w flex-l-m filter-tope-group m-tb-10">
@@ -269,7 +269,7 @@ box-shadow:  5px 5px 10px #b5b5b5,
 
 						<div class="block2-txt flex-w flex-t p-t-14">
 							<div class="block2-txt-child1 flex-col-l ">
-								<a href="{% url 'Product' %}" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+								<a href="{{product.get_url}}" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
 									{{product.product_name}}
 								</a>
 
